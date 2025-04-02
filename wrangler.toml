@@ -2,11 +2,13 @@ name = "duck"
 compatibility_date = "2025-02-04"
 compatibility_flags = [ "nodejs_compat" ]
 
-[[d1_databases]]
-binding = "DB"
-database_name = "honc-d1-database"
-database_id = "local-honc-d1-database"
-migrations_dir = "drizzle/migrations"
+main = "src/index.ts"
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "honc-d1-database"
+# database_id = "local-honc-d1-database"
+# migrations_dir = "drizzle/migrations"
 
 # [vars]
 # MY_VAR = "my-variable"
@@ -17,13 +19,14 @@ migrations_dir = "drizzle/migrations"
 [observability]
 enabled = true
 
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[durable_objects.bindings]]
+name = "WEBSOCKET_HIBERNATION_SERVER"
+class_name = "WebSocketHibernationServer"
 
-# [[r2_buckets]]
-# binding = "MY_BUCKET"
-# bucket_name = "my-bucket"
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["WebSocketHibernationServer"]
 
-# [ai]
-# binding = "AI"
+[assets]
+directory = "./assets"
+binding = "ASSETS"
