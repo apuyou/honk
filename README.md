@@ -2,7 +2,7 @@
 
 This is a project created with the `create-honc-app` template for the [World Wild Web Hack Night](https://github.com/Nlea/World-Wild-Web-Hack-Night) in Paris 🥖
 
-When clicking on the Honk button, your device will honk… as well as all devices currently connected to this page! 🪿
+When clicking on the Honk button, your device will honk… as well as all devices currently connected to this page!
 
 Honks are sent through a WebSocket hosted by [Cloudflare Workers](https://hono.dev/docs/getting-started/cloudflare-workers) and [Durable Objects](https://hono.dev/examples/cloudflare-durable-objects).
 The frontend and Honk noise use the [Static Assets](https://hono.dev/docs/getting-started/cloudflare-workers#serve-static-files) binding.
